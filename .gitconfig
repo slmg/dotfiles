@@ -18,6 +18,7 @@
 	l = pull
 	lo = log --oneline --decorate --graph
 	lov = log --graph
+	ls = ls-files
 	m = merge
 	p = push
 	pu = push -u
