@@ -18,7 +18,7 @@ sh install.sh
 ```
 
 By default, any existing tracked file is not overwritten by the script so it's safe to run.
-On the opposite, to replace any existing tracked file by the current version on the `dotfiles` branch (ex on a fresh machine/container), use the `--hard` option.
+On the opposite, to replace any existing tracked file by the current version on the `dotfiles` branch (useful on a fresh machine/container), use the `--hard` option.
 
 ```sh
 # Caution, any modification will be lost!
@@ -38,8 +38,8 @@ export "alias dotfiles='git --git-dir=$HOME/.config/dotfiles.git --work-tree=$HO
 
 This repo`s architecture consists of two main branches:
 
-* `master` for documentation and helper scripts
-* `dotfiles` for "dotfiles" config files - only this branch is relevant to the homedir
+* `master` - hosting documentation and helper scripts
+* `dotfiles` - hosting config files, only this branch is deployed locally
 
 The branch `dotfiles` is deployed to `$HOME` through the combination of a bare
 git repository (cloned into `$HOME/.config/dotfiles.git`) and the alias defined above, pointing
@@ -50,31 +50,27 @@ This trick allows to use standard git commands by substituting `git` to `dotfile
 ```sh
 # Note that the repo is configured to not show untracked files when using `status`.
 dotfiles status
-dotfiles add $HOME/.gitconfig
+dotfiles add .gitconfig
 dotfiles commit -m "Modified .gitconfig"
 dotfiles push
 ```
 
 ## Post-installation steps
 
-If you didn't use the `--hard` option during installation, no files in your homedir was altered.
-Git's default behaviour is to stage every diff between your working tree and the branch `dotfiles`.
-List every diff by running `dotfiles status`.
-
-Presumably, you care not to overwrite at least some file in your homedir. If that is not the case
-and you happen to have missed the `--hard` arg earlier, produce the same outcome by running the below command. It is also useful once the file you wanted to keep were removed from the index.
+By default, no existing tracked file is altered if the install script was run
+without the `--hard` option. Review any diff by running:
 
 ```sh
-# Caution, any modification will be lost!
-dotfiles reset --hard
+dotfiles status
 ```
 
-To keep original 'dirty' files (not the dotfiles revisions), unstage them.
+Then decide what to do using `dotfiles checkout`/`add`/`commit`/`reset` etc...
+Classic git workflow! :)
+
+If you realise that you do not care about any diff and that it would have been preferrable to
+pass `--hard` to the `install.sh` script, produce the same outcome by running:
 
 ```sh
-# Example: removing .gitconfig from the index.
-dotfiles reset -- .gitconfig
-
-# If that was a mistake, restore the 'dotfiles' revision.
-dotfiles checkout .gitconfig
+# Overwrite everything. Caution, any modification will be lost!
+dotfiles checkout $HOME
 ```
