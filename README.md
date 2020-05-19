@@ -25,16 +25,7 @@ On the contrary, to replace all existing tracked files by the current version on
 sh install.sh --hard
 ```
 
-To manage `$HOME` like a normal git repository, define the below alias.
-
-```sh
-alias dotfiles='git --git-dir=$HOME/.config/dotfiles.git --work-tree=$HOME'
-
-# Include it in your shell profile (which should live in the branch 'dotfiles').
-export "alias dotfiles='git --git-dir=$HOME/.config/dotfiles.git --work-tree=$HOME'" >> .bashrc
-```
-
-## Principle
+## Usage
 
 This repo is architected as a set of two main branches:
 
@@ -42,8 +33,15 @@ This repo is architected as a set of two main branches:
 * `dotfiles` - to host config files, only this branch is deployed locally
 
 The branch `dotfiles` is deployed to `$HOME` through the combination of a bare
-git repository (cloned into `$HOME/.config/dotfiles.git`) and the alias `dotfiles`,
+git repository cloned into `$HOME/.config/dotfiles.git`, and the below alias `dotfiles`
 pointing git to `$HOME`.
+
+```sh
+alias dotfiles='git --git-dir=$HOME/.config/dotfiles.git --work-tree=$HOME'
+
+# Include it in your shell profile (which should live in the branch 'dotfiles').
+export "alias dotfiles='git --git-dir=$HOME/.config/dotfiles.git --work-tree=$HOME'" >> .bashrc
+```
 
 This trick allows to use standard git commands by substituting `git` to `dotfiles`.
 
