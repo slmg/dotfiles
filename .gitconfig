@@ -1,3 +1,29 @@
 [user]
 	name = slmg
 	email = 38896727+slmg@users.noreply.github.com
+[alias]
+	a = add
+	b = branch
+	ci = commit -v
+	cia = commit -v -a
+	cim = commit -m
+	ciam = commit -m -a
+	cl = clone --recurse-submodules
+	co = checkout
+	cob = checkout -b
+	d = diff
+	dc = diff --cached
+	f = fetch
+	h = help
+	l = pull
+	lo = log --oneline --decorate --graph
+	lov = log --graph
+	m = merge
+	p = push
+	pu = push -u
+	rb = rebase
+	rbi = rebase -i
+	rs = reset
+	rv = remote -v
+	s = status
+	sta = stash
