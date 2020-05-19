@@ -10,11 +10,13 @@ test -d "$HOME" || {
 
 GIT_DIR="$HOME/.config/dotfiles.git"
 GIT_RESET_HARD=false
+REPO_URL=https://github.com/slmg/dotfiles.git
 
 # Parse arguments
 while [ $# -gt 0 ]; do
     case $1 in
         --hard) GIT_RESET_HARD=true ;;
+        --ssh) REPO_URL=git@github.com:slmg/dotfiles.git ;;
     esac
     shift
 done
@@ -27,7 +29,7 @@ mkdir -p "$(dirname "$GIT_DIR")"
 
 echo "Cloning a bare copy into '$GIT_DIR'..."
 git clone --quiet --separate-git-dir="$GIT_DIR" --single-branch --branch=dotfiles \
-    https://github.com/slmg/dotfiles.git "$TMP_LOCATION"
+    "$REPO_URL" "$TMP_LOCATION"
 
 # Not needed anymore, 'git checkout' is the strategy used to restore the desired state.
 rm -rf "$TMP_LOCATION"

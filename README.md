@@ -14,16 +14,19 @@ curl -fsSL https://raw.githubusercontent.com/slmg/dotfiles/master/install.sh -o 
 wget https://raw.githubusercontent.com/slmg/dotfiles/master/install.sh
 
 # Once you're happy with what the script does, execute it.
-sh install.sh
+sh install.sh [--ssh] [--hard]
 ```
 
-By default, no existing tracked file is overwritten by the script so it's safe to run.
-On the contrary, to replace all existing tracked files by the current version on the `dotfiles` branch (useful on a fresh machine/container), use the `--hard` option.
+### Parameters
 
-```sh
-# Caution, any modification will be lost!
-sh install.sh --hard
-```
+It is safe to run the install script *without params* as no existing tracked file is overwritten.
+
+The following options are available to customise installation.
+
+| Arg      | Description                                                                                                                                                             |
+|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `--ssh`  | Conduct `pull` and `push` via ssh rather than http (default).                                                                                                           |
+| `--hard` | Overwrite all existing tracked files by the current version on the `dotfiles` branch (useful on a fresh machine/container). **Caution, any modification will be lost!** |
 
 ## Usage
 
