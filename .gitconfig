@@ -3,6 +3,7 @@
 	email = 38896727+slmg@users.noreply.github.com
 [alias]
 	a = add
+	au = add --update
 	b = branch
 	ci = commit -v
 	cia = commit -v -a
