@@ -29,5 +29,5 @@
 	rv = remote -v
 	s = status
 	sta = stash
-[includeIf "gitdir:~/code/gitlab/"]
-	path = ~/code/gitlab/.gitconfig-gitlab
+[includeIf "gitdir:~/src/gitlab/"]
+	path = ~/src/gitlab/.gitconfig-gitlab
