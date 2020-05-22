@@ -1,0 +1,91 @@
+{
+    "breadcrumbs.enabled": false,
+    "workbench.tree.indent": 20,
+    "workbench.editor.scrollToSwitchTabs": true,
+    "explorer.confirmDelete": false,
+    "window.restoreWindows": "all",
+    "window.openFoldersInNewWindow": "on",
+    // Disable telemetry - do not send usage data
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "code-runner.enableAppInsights": false,
+    "editor.tabCompletion": "on",
+    "editor.minimap.enabled": false,
+    "editor.mouseWheelZoom": true,
+    "editor.smoothScrolling": true,
+    "editor.rulers": [
+        79,
+        88,
+        120
+    ],
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "files.associations": {
+        "**/requirements/*.txt": "pip-requirements",
+        "**/requirements/*.in": "pip-requirements",
+        ".pylintrc": "ini",
+        "terraform.tfstate.backup": "json"
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/dist": true,
+        "**/build": true,
+        "**/env/**": true,
+        "**/venv/**": true,
+        "**/virtualenv/**": true,
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/vendors": true,
+        "**/__pycache__": true,
+        "**/.ipynb_checkpoints/**": true,
+        "**/.mypy_cache": true,
+        "**/.pytest_cache": true,
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/node_modules/**": true,
+        "**/build/**": true,
+        "**/dist/**": true,
+        "**/env/**": true,
+        "**/venv/**": true,
+        "**/virtualenv/**": true,
+        "**/bower_components/**": true,
+        "**/vendors/**": true,
+        "**/__pycache__": true,
+        "**/.ipynb_checkpoints/**": true,
+        "**/.mypy_cache": true,
+        "**/.pytest_cache": true,
+    },
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.rightClickBehavior": "copyPaste",
+    // "workbench.colorTheme": "Monokai",
+    "[dockerfile]": {
+        "editor.formatOnSave": false
+    },
+    "explorer.confirmDragAndDrop": false,
+    "window.zoomLevel": 0,
+    // force vscode to respect keyboard mapping - https://github.com/microsoft/vscode/issues/32037
+    "keyboard.dispatch": "keyCode",
+    // temp terraform settings until v0.12 is supported - https://github.com/mauve/vscode-terraform/issues/157#issuecomment-587125278
+    "terraform.indexing": {
+        "enabled": false,
+    },
+    "terraform.languageServer": {
+        "enabled": true,
+        "args": []
+    },
+    "terraform.telemetry.enabled": false,
+    "shellcheck.run": "onSave",
+    "shellcheck.ignorePatterns": {
+        "**/*.zsh*": true,
+    }
+}
