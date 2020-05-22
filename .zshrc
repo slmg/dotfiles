@@ -21,6 +21,8 @@ export EDITOR='vim'
 
 # Below are personal aliases, possibly overriding those provided by oh-my-zsh.
 
+alias dotfiles='git --git-dir=$HOME/.config/dotfiles.git --work-tree=$HOME'
+
 alias l="ls -lrth"
 alias ll="ls -lArth"
 
@@ -34,4 +36,4 @@ alias hg="history | grep -i"
 alias tf=terraform
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 
-alias dotfiles='git --git-dir=$HOME/.config/dotfiles.git --work-tree=$HOME'
+alias vscode-install-extensions="cat $HOME/.config/Code/User/extensions.txt | xargs -L 1 code --install-extension "
