@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+# This script performs two actions:
+#
+#   1. Install missing extensions from the extensions list, if any.
+#   2. Dump locally installed extensions to the extensions list, if any.
+#
+# In effect, deleted extensions need to also be deleted from the extensions list.
+# Otherwise they would be installed again the next time this script is run.
+
+set -e
+
+EXTENSIONS_LIST="$HOME/.config/Code/User/extensions.txt"
+
+# Sanity checks.
+command -v code > /dev/null || {
+    echo "'code' (VsCode) could not be found in PATH, is it installed?" >&2
+    exit 1
+}
+test -f "$EXTENSIONS_LIST" || {
+    echo "$EXTENSIONS_LIST does not exist! Aborting..." >&2
+    exit 1
+}
+
+echo "Syncing $EXTENSIONS_LIST..."
+
+INSTALLED_EXTENSIONS_LIST=$(mktemp)
+code --list-extensions > "$INSTALLED_EXTENSIONS_LIST"
+
+# Get the extensions from the list not installed locally (list - local).
+EXTENSIONS_TO_INSTALL=$(comm -23 "$EXTENSIONS_LIST" "$INSTALLED_EXTENSIONS_LIST")
+
+# Get the extensions installed locally not present in the list (local - list).
+EXTENSIONS_TO_VERSION=$(comm -13 "$EXTENSIONS_LIST" "$INSTALLED_EXTENSIONS_LIST")
+
+if [ -z "$EXTENSIONS_TO_INSTALL" ] && [ -z "$EXTENSIONS_TO_VERSION" ]; then
+    echo "Already up to date"
+fi
+
+if [ -n "$EXTENSIONS_TO_INSTALL" ]; then
+    # Install missing extensions
+    echo "$EXTENSIONS_TO_INSTALL" | xargs -L 1 code --install-extension
+fi
+
+if [ -n "$EXTENSIONS_TO_VERSION" ]; then
+    echo "Adding the following extensions to $EXTENSIONS_LIST:"
+    echo "$EXTENSIONS_TO_VERSION"
+    echo "You may want to commit this change."
+    # Overwrite $EXTENSIONS_LIST with locally installed extensions.
+    code --list-extensions > "$EXTENSIONS_LIST"
+fi
+
+# Clean up.
+rm "$INSTALLED_EXTENSIONS_LIST"
