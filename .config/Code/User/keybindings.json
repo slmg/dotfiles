@@ -44,4 +44,19 @@
         "command": "-extension.vim_ctrl+f",
         "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl && vim.mode != 'Insert'"
     },
+    {
+        "key": "f8",
+        "command": "-editor.action.marker.nextInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "f8",
+        "command": "code-runner.run",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "-code-runner.run",
+        "when": "editorFocus"
+    },
 ]
