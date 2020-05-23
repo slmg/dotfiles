@@ -1,3 +1,8 @@
+# Add ~/.local/bin to PATH if it is not already present.
+if [[ ! ":$PATH:" == *":$HOME/.local/bin:"* ]]; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
