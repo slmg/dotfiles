@@ -48,6 +48,8 @@
         "**/.ipynb_checkpoints/**": true,
         "**/.mypy_cache": true,
         "**/.pytest_cache": true,
+        "**/htmlcov": true,
+        "**/.coverage": true,
     },
     "files.watcherExclude": {
         "**/.git/objects/**": true,
@@ -63,6 +65,8 @@
         "**/.ipynb_checkpoints/**": true,
         "**/.mypy_cache": true,
         "**/.pytest_cache": true,
+        "**/htmlcov": true,
+        "**/.coverage": true,
     },
     "terminal.integrated.fontSize": 13,
     "terminal.integrated.copyOnSelection": true,
