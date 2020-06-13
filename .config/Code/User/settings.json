@@ -79,15 +79,6 @@
     "window.zoomLevel": 0,
     // force vscode to respect keyboard mapping - https://github.com/microsoft/vscode/issues/32037
     "keyboard.dispatch": "keyCode",
-    // temp terraform settings until v0.12 is supported - https://github.com/mauve/vscode-terraform/issues/157#issuecomment-587125278
-    "terraform.indexing": {
-        "enabled": false,
-    },
-    "terraform.languageServer": {
-        "enabled": true,
-        "args": []
-    },
-    "terraform.telemetry.enabled": false,
     "shellcheck.run": "onSave",
     "shellcheck.ignorePatterns": {
         "**/*.zsh*": true,
