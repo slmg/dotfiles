@@ -46,3 +46,7 @@ command -v terraform > /dev/null && {
 command -v terraform-docs > /dev/null && {
     alias tfd=terraform-docs
 }
+
+command -v terraform-docs-replace > /dev/null && {
+    alias tfdr=terraform-docs-replace
+}

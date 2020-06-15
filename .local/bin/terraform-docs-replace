@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+docker container run --rm \
+    -v "$(pwd)":/data \
+    cytopia/terraform-docs:0.9.1 \
+    terraform-docs-replace "$@"
