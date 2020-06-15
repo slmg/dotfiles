@@ -38,8 +38,11 @@ alias ag="alias | grep -i"
 alias eg="env | grep -i"
 alias hg="history | grep -i"
 
-# Only execute if terraform is in PATH.
 command -v terraform > /dev/null && {
     alias tf=terraform
     export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+}
+
+command -v terraform-docs > /dev/null && {
+    alias tfd=terraform-docs
 }
