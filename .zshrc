@@ -32,7 +32,7 @@ alias l="ls -lrth"
 alias ll="ls -lArth"
 
 alias gfg="git ls-files | xargs grep --color=always -in"
-alias glo="git --no-pager lo"
+alias glon="git --no-pager lo"
 
 alias ag="alias | grep -i"
 alias eg="env | grep -i"
