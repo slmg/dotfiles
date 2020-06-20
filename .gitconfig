@@ -31,3 +31,5 @@
 	sta = stash
 [includeIf "gitdir:~/src/gitlab/"]
 	path = ~/src/gitlab/.gitconfig-gitlab
+[fetch]
+	prune = true
