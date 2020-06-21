@@ -18,5 +18,14 @@
 			"\"\"\"${1:description}\"\"\"",
 		],
 		"description": "Single line docstring"
+	},
+	"Async pytest": {
+		"prefix": "ast",
+		"body": [
+			"@pytest.mark.asyncio",
+			"async def test_${1:name}(${2:args}):",
+			"\t$3"
+		],
+		"description": "Create new async test"
 	}
 }
