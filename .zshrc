@@ -31,7 +31,7 @@ alias dotfiles='git --git-dir=$HOME/.config/dotfiles.git --work-tree=$HOME'
 alias l="ls -lrth"
 alias ll="ls -lArth"
 
-alias gfg="git ls-files | xargs grep --color=always -in"
+alias gfg="git ls-files --recurse-submodules | xargs grep --color=always -in"
 alias glon="git --no-pager lo master.."
 
 alias ag="alias | grep -i"
