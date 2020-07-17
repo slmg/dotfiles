@@ -19,13 +19,33 @@
 		],
 		"description": "Single line docstring"
 	},
-	"Async pytest": {
-		"prefix": "ast",
+	"Pytest async test": {
+		"prefix": "ptat",
 		"body": [
 			"@pytest.mark.asyncio",
 			"async def test_${1:name}(${2:args}):",
-			"\t$3"
+			"\t\"\"\"${3:description}\"\"\"",
+			"\t$0"
 		],
-		"description": "Create new async test"
-	}
+		"description": "Pytest async test"
+	},
+	"Pytest test": {
+		"prefix": "ptt",
+		"body": [
+			"def test_${1:name}(${2:args}):",
+			"\t\"\"\"${3:description}\"\"\"",
+			"\t$0"
+		],
+		"description": "Pytest test"
+	},
+	"Pytest fixture": {
+		"prefix": "ptf",
+		"body": [
+			"@pytest.fixture(scope=\"${1:function}\")",
+			"def ${2:name}(${3:args}):",
+			"\t\"\"\"${4:description}\"\"\"",
+			"\t$0"
+		],
+		"description": "Pytest fixture"
+	},
 }
