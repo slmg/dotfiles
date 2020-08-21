@@ -28,8 +28,10 @@ export EDITOR='vim'
 
 alias dotfiles='git --git-dir=$HOME/.config/dotfiles.git --work-tree=$HOME'
 
-alias l="ls -lrth"
-alias ll="ls -lArth"
+alias l="ls -lh"
+alias lt="ls -lrth"
+alias la="ls -lAh"
+alias lat="ls -lArth"
 
 alias gfg="git ls-files --recurse-submodules | xargs grep --color=always -in"
 alias glon="git --no-pager lo master.."
