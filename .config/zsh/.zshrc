@@ -9,6 +9,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load.
 ZSH_THEME="custom"
 
+# Use another custom folder than $ZSH/custom.
+ZSH_CUSTOM="$ZDOTDIR/omz_custom"
+
 # Ensure history is created next to this file (wherever .zshenv decides it is).
 HISTFILE="$ZDOTDIR/.zsh_history"
 
