@@ -15,6 +15,16 @@ HISTFILE="$ZDOTDIR/.zsh_history"
 # History display preference.
 HIST_STAMPS="yyyy-mm-dd"
 
+HISTORY_IGNORE="(
+    |history|pwd|fg|echo|tree|alias|ag *|eg *|cd|cd ..|..|...|....|1|2|3|4|5|
+    |l|l *|la|la *|lt|lt *|lat|lat *|ls|ls *|d|dirs|dirs -v|pipx list|
+    |which *|man *|* --help|git help *|* --version|* version|
+    |docker * ls|docker * ls -a|docker ps| docker ps -a|docker diff *|
+    |code|vim|gst|gd|gdca|glo|glog|glon|glol|gl|glo *|gstl|
+    |dotfiles s|dotfiles d|dotfiles dc|dotfiles lo|dotfiles l|
+    |apt search *|snap search *|apt-cache search *|pip search *|pip3 search *|
+)"
+
 # Plugins to load from ~/.oh-my-zsh/plugins/* or ~/.oh-my-zsh/custom/plugins/.
 plugins=(
     docker-compose
