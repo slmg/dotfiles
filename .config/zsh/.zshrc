@@ -9,6 +9,12 @@ export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load.
 ZSH_THEME="custom"
 
+# Ensure history is created next to this file (wherever .zshenv decides it is).
+HISTFILE="$ZDOTDIR/.zsh_history"
+
+# History display preference.
+HIST_STAMPS="yyyy-mm-dd"
+
 # Plugins to load from ~/.oh-my-zsh/plugins/* or ~/.oh-my-zsh/custom/plugins/.
 plugins=(
     docker-compose
