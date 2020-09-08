@@ -30,6 +30,7 @@ HISTORY_IGNORE="(
 
 # Plugins to load from ~/.oh-my-zsh/plugins/* or ~/.oh-my-zsh/custom/plugins/.
 plugins=(
+    docker
     docker-compose
     git
     pip
