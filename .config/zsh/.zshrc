@@ -12,7 +12,7 @@ ZSH_THEME="custom"
 # Use another custom folder than $ZSH/custom.
 ZSH_CUSTOM="$ZDOTDIR/omz_custom"
 
-# Ensure history is created next to this file (wherever .zshenv decides it is).
+# Ensure history is created in ZDOTDIR (set in ~/.zshenv).
 HISTFILE="$ZDOTDIR/.zsh_history"
 
 # History display preference.
