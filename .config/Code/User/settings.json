@@ -82,9 +82,6 @@
     // force vscode to respect keyboard mapping - https://github.com/microsoft/vscode/issues/32037
     "keyboard.dispatch": "keyCode",
     "shellcheck.run": "onSave",
-    "shellcheck.ignorePatterns": {
-        "**/*.zsh*": true,
-    },
     "markdownlint.config": {
         "MD013": false,
         "MD033": false,
