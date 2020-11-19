@@ -33,3 +33,5 @@
 	path = ~/src/gitlab/.gitconfig-gitlab
 [fetch]
 	prune = true
+[core]
+	autocrlf = input
