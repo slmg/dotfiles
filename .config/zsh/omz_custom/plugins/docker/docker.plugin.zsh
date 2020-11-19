@@ -23,6 +23,7 @@ alias drl='docker container ls'
 alias drla='docker container ls -a'
 alias drr='docker container run'
 alias drin='docker container run --rm -it'
+alias drf='docker container diff'
 alias drsta='docker container start'
 alias drsto='docker container stop'
 alias dra='docker container attach'
@@ -48,4 +49,6 @@ alias dvc="docker volume create"
 alias dvi='docker volume inspect'
 alias dvim="docker volume inspect --format='{{.Mountpoint}}'"
 alias dvr="docker volume rm"
+# remove spam (un-named volume)
+alias dvrs="docker volume ls | grep -oE '\w{64}' | xargs docker volume rm"
 alias dvd="docker volume prune"
