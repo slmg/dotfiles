@@ -15,6 +15,8 @@ alias dii='docker image inspect'
 alias diid="docker image inspect --format='{{index .RepoDigests 0}}'"
 alias dih='docker image history'
 alias dir='docker image rm'
+# rm vscode devcontainers (they tend to pile up)
+alias dirvsc="dil | grep -E '^vsc-.*' | cut -d\  -f1 | xargs printf -- '%s:latest\n' | xargs docker image rm"
 alias did='docker image prune'
 alias dida='docker image prune -a'
 
