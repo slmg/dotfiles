@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+# Analyse a docker image layer.
+# https://github.com/wagoodman/dive
+
+docker container run --rm -it \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    wagoodman/dive:v0.9 \
+    "$@"
