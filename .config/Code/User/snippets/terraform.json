@@ -15,12 +15,27 @@
 	"Module main.tf header": {
 		"prefix": "tfh",
 		"body": [
-			"/*",
+			"/**",
 			"* # ${1:Main title}",
 			"*",
 			"* ${2:General module summary}",
 			"*/",
 		],
 		"description": "Header parsed by terraform-docs and then inserted at the top of README.md."
+	},
+	"variables.tf separator": {
+		"prefix": "varr",
+		"body": [
+			"# -----------------------------------------------------------------------------",
+			"# REQUIRED PARAMETERS",
+			"# You must provide a value for each of these parameters.",
+			"# -----------------------------------------------------------------------------\n",
+			"${0}\n",
+			"# -----------------------------------------------------------------------------",
+			"# OPTIONAL PARAMETERS",
+			"# These parameters have reasonable defaults.",
+			"# -----------------------------------------------------------------------------\n",
+		],
+		"description": "Comment separator to logically distinguish required and optional variables."
 	}
 }
