@@ -58,6 +58,7 @@ alias lz="du -sh * | sort -h"
 
 alias gfg="git ls-files --recurse-submodules | xargs grep --color=always -in"
 alias glon="git --no-pager lo master.."
+alias gstak="git stash push --keep-index"
 
 alias ag="alias | grep -i"
 alias eg="env | grep -i"
