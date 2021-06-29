@@ -73,6 +73,7 @@
     "terminal.integrated.fontSize": 13,
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.rightClickBehavior": "copyPaste",
+    "terminal.integrated.tabs.enabled": false,
     // "workbench.colorTheme": "Monokai",
     "[dockerfile]": {
         "editor.formatOnSave": false
