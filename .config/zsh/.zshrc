@@ -81,3 +81,10 @@ command -v terraform-docs-replace > /dev/null && {
 command -v xdg-open > /dev/null && {
     alias open=xdg-open
 }
+
+# Enable completion for pipx.
+command -v pipx > /dev/null && {
+    # Un-comment the below if experiencing any issues.
+    # autoload -U bashcompinit && bashcompinit
+    eval "$(register-python-argcomplete pipx)"
+}
