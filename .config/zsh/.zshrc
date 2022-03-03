@@ -77,7 +77,7 @@ command -v terraform-docs-replace > /dev/null && {
     alias tfdr=terraform-docs-replace
 }
 
-# Open with the default program in a graphical session, in a web browseer as an example.
+# Open with the default program in a graphical session, in a web browser as an example.
 command -v xdg-open > /dev/null && {
     alias open=xdg-open
 }
