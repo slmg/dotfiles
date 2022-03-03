@@ -16,7 +16,7 @@ alias diid="docker image inspect --format='{{index .RepoDigests 0}}'"
 alias dih='docker image history'
 alias dir='docker image rm'
 # rm vscode devcontainers (they tend to pile up)
-alias dirvsc="dil | grep -E '^vsc-.*' | cut -d\  -f1 | xargs printf -- '%s:latest\n' | xargs docker image rm"
+alias dir-vsc="docker image ls | grep -E '^vsc-.*' | cut -d\  -f1 | xargs docker image rm"
 alias did='docker image prune'
 alias dida='docker image prune -a'
 
@@ -51,6 +51,7 @@ alias dvc="docker volume create"
 alias dvi='docker volume inspect'
 alias dvim="docker volume inspect --format='{{.Mountpoint}}'"
 alias dvr="docker volume rm"
-# remove spam (un-named volume)
-alias dvrs="docker volume ls | grep -oE '\w{64}' | xargs docker volume rm"
+alias dvr-anon="docker volume ls | grep -oE '\w{64}' | xargs docker volume rm"
+alias dvr-local-deps="docker volume ls | grep -oE '\ .*local-deps' | xargs docker volume rm"
+alias dvr-vscode-extensions="docker volume ls | grep -oE ' .*vscode-extensions' | xargs docker volume rm"
 alias dvd="docker volume prune"
