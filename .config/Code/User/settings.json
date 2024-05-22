@@ -6,9 +6,8 @@
     "window.restoreWindows": "all",
     "window.openFoldersInNewWindow": "on",
     // Disable telemetry - do not send usage data
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "code-runner.enableAppInsights": false,
+    "telemetry.telemetryLevel": "off",
+    "redhat.telemetry.enabled": false,
     "editor.tabCompletion": "on",
     "editor.minimap.enabled": false,
     "editor.mouseWheelZoom": true,
