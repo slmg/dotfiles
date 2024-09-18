@@ -1,6 +1,6 @@
 [user]
 	name = slmg
-	email = 38896727+slmg@users.noreply.github.com
+	email = slmg.code@gmail.com
 [alias]
 	a = add
 	au = add --update
@@ -35,3 +35,8 @@
 	prune = true
 [core]
 	autocrlf = input
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
