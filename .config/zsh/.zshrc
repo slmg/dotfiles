@@ -31,6 +31,7 @@ HISTORY_IGNORE="(
 # Plugins to load from ~/.oh-my-zsh/plugins/* or ~/.oh-my-zsh/custom/plugins/.
 plugins=(
     aws
+    conda-env
     docker
     docker-compose
     git
@@ -88,4 +89,10 @@ command -v pipx > /dev/null && {
     # Un-comment the below if experiencing any issues.
     # autoload -U bashcompinit && bashcompinit
     eval "$(register-python-argcomplete pipx)"
+}
+
+# Enable completion for micromamba.
+command -v micromamba > /dev/null && {
+    export MAMBA_ROOT_PREFIX="$HOME/micromamba"
+    eval "$(micromamba shell hook --shell zsh)"
 }

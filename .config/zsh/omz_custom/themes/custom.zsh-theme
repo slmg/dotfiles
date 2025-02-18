@@ -6,7 +6,7 @@ typeset +H _return_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$
 
 
 PROMPT='
-$(_user_host)${_current_dir} $(virtualenv_prompt_info) $(git_prompt_info)
+$(_user_host)${_current_dir}$(virtualenv_prompt_info)$(conda_prompt_info) $(git_prompt_info)
 ${_return_status} '
 
 RPROMPT='$(vi_mode_prompt_info)%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) %{$(echotc DO 1)%}'
@@ -56,8 +56,12 @@ function _git_time_since_commit() {
 MODE_INDICATOR="%{$fg_bold[yellow]%}❮%{$reset_color%}%{$fg[yellow]%}❮❮%{$reset_color%}"
 
 # Virtualenv prompt settings
-ZSH_THEME_VIRTUALENV_PREFIX="%{$fg[green]%}("
+ZSH_THEME_VIRTUALENV_PREFIX=" %{$fg[green]%}("
 ZSH_THEME_VIRTUALENV_SUFFIX=")%{$reset_color%}"
+
+# Conda prompt settings
+ZSH_THEME_CONDA_PREFIX=' %F{green}'
+ZSH_THEME_CONDA_SUFFIX='%f'
 
 # Git prompt settings
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[cyan]%} "
