@@ -1,5 +1,0 @@
-{
-    // Shut down kernel
-    // Whether to shut down or not the kernel when closing a notebook.
-    "kernelShutdown": true
-}
