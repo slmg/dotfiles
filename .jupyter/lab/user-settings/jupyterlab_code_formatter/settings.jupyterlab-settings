@@ -33,7 +33,7 @@
         "width_cutoff": 150
     },
     "styler": {},
-    "formatOnSave": true,
+    "formatOnSave": false,
     "cacheFormatters": false,
     "astyle": {
         "args": []

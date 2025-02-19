@@ -5,7 +5,28 @@
             "keys": [
                 "Accel Shift A"
             ],
-            "selector": ".jp-Notebook:focus"
+            "selector": ".jp-Notebook"
+        },
+        {
+            "command": "notebook:restart-and-run-to-selected",
+            "keys": [
+                "Accel Shift ;"
+            ],
+            "selector": ".jp-Notebook"
+        },
+        {
+            "command": "jupyterlab_code_formatter:format_all",
+            "keys": [
+                "F"
+            ],
+            "selector": ".jp-Notebook.jp-mod-commandMode"
+        },
+        {
+            "command": "jupyterlab_code_formatter:format",
+            "keys": [
+                "Accel F"
+            ],
+            "selector": ".jp-Notebook.jp-mod-editMode"
         }
     ]
 }
