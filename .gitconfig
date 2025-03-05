@@ -40,5 +40,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[safe]
+	directory = /snap/microk8s/current/addons/community/.git
 [init]
 	defaultBranch = main
