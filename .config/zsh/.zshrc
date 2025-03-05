@@ -30,6 +30,7 @@ HISTORY_IGNORE="(
 
 # Plugins to load from ~/.oh-my-zsh/plugins/* or ~/.oh-my-zsh/custom/plugins/.
 plugins=(
+    ansible
     aws
     conda-env
     docker
@@ -58,8 +59,8 @@ alias lat="ls -lArth --time-style=long-iso"
 alias lz="du -sh * | sort -h"
 
 alias gfg="git ls-files --recurse-submodules | xargs grep --color=always -in"
-alias glon='git --no-pager lo $(git_main_branch)..'
-alias gl5="git --no-pager lo -n 5"
+alias gl5="git --no-pager log --oneline --decorate -n 5"
+alias glon='git --no-pager log --oneline --decorate --graph  $(git_main_branch)..'
 alias gstak="git stash push --keep-index"
 
 alias ag="alias | grep -i"
