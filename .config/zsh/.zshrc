@@ -96,4 +96,5 @@ command -v pipx > /dev/null && {
 command -v micromamba > /dev/null && {
     export MAMBA_ROOT_PREFIX="$HOME/micromamba"
     eval "$(micromamba shell hook --shell zsh)"
+    alias mamba=micromamba
 }
