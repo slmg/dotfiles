@@ -80,11 +80,6 @@ command -v terraform-docs-replace > /dev/null && {
     alias tfdr=terraform-docs-replace
 }
 
-# Open with the default program in a graphical session, in a web browser as an example.
-command -v xdg-open > /dev/null && {
-    alias open=xdg-open
-}
-
 # Enable completion for pipx.
 command -v pipx > /dev/null && {
     # Un-comment the below if experiencing any issues.
